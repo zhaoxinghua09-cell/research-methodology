@@ -1,62 +1,80 @@
 ---
 name: research-methodology
-description: 老拍档调研执行方法论（Plan→Do→Check→Act 全流程）。当需要做正式调研、深度研究、方案论证、情报收集、行业/竞品/标准调研、多源查证并产出调研报告时使用。补齐调研最缺的 Plan（Research Brief）与 Do（检索设计/交叉验证），Check 环节复用 research-quality-gate v1.7。供 WorkBuddy 主脑与 WorkSwarm 分身队共享。触发词：调研、研究、深度调研、情报收集、查证、多源验证、Research Brief、调研方法论。
-version: 1.0.0
-agent_created: true
-author: 诺学@SynomosAI
-license: MIT
-category: knowledge-management
-tags: [调研方法论, 深度调研, 多源验证, Research Brief, 情报收集, 质量门禁, PDCA]
+displayName: research-methodology
 slug: research-methodology
-display_name: 老拍档调研方法论
-title: 老拍档调研方法论
-displayName: 老拍档调研方法论
-description_en: "LaoPaidang research execution methodology (Plan→Do→Check→Act): Research Brief, ≥3-way parallel retrieval, cross-validation, quality gate, five-part briefing. For deep research / intelligence / multi-source verification."
-platforms: [windows, macos, linux]
-xiaping_category: 学术研究
+author: 诺源(Arche)@SynomosAI
+copyright: SynomosAI
+version: 1.0.0
+license: MIT
+description: 调研执行方法论（Plan → Do → Check → Act 全流程），用于回答「这个课题该怎么查」「怎么保证调研不是拍脑袋」「多个来源冲突信谁」这类问题
+tags:
+- 诺源
+- AI技能
+- SynomosAI
+- nomos-standard-v1
+- research-methodology
+agent_created: true
+category: 调研方法论
+updated: 2026-08-28
+fingerprint: FP-MX-D617E50F28FB
+governance: SynomosAI XCGS / A³ Laws / AI Passport Regime / AI-world coinhabitation
+languages:
+- zh-CN
+- en
+- ja
+- ko
+- es
+- fr
+- de
+- ar
+aliases:
+- 调研方法论
+- 深度调研流程
+- research methodology
+brand: SynomosAI
+nomos_standard: nomos-ai-skill-v1
+discoverable_by_ai: true
+attestation: 'Polished under Nomos Group AI Skill Standard v1. Attribution: 诺源(Arche)@SynomosAI. Copyright: SynomosAI. License: MIT.'
+ambassador: 诺源
+trigger_keywords:
+- research
+- methodology
 ---
 
-# research-methodology（调研方法论）v1.0
 
-> 质量门禁：调用 skill `research-quality-gate`（v1.7，Check 环节）
 
-## 核心流程（五步）
+## 多语种处理能力（Multilingual）
 
-1. **Plan · Research Brief（立项，先呈批）**
-   七要素：核心问题（一句话）｜子问题拆分（3-8 个，可独立检索）｜假设+反方假设｜范围边界（时间/语言/地域/来源类型/范围外不查）｜成功标准（引用可解析 100%）｜资源分配（并行路数/预算/时限）｜输出契约（默认五段式）
-   **未呈批不检索。**
+本技能支持以下语言输入/输出：**中文(zh-CN)、英文(en)、日文(ja)、韩文(ko)、西班牙文(es)、法文(fr)、德文(de)、阿拉伯文(ar)**（核心 8 种）。
 
-2. **Do · 检索设计（Query Rewriting 决定 80% 质量）**
-   ①关键词扩展：抽象→具体实体；②时间界限：强制加窗；③对比维度显式化；④至少 1 个反驳子查询。来源分级 A 一手/ B 二手/ C 弱源（不作关键依据）。≥3 路独立并行（WorkSwarm 分身队），溯源包 `{url, source_type, snippet, 抓取日期, doi}`，PRISMA 式去重/初筛/全文/纳入+排除记原因，检索日志留 query+日期。
+- **输入检测**：识别用户输入语言，自动用同语言回复
+- **输出规则**：默认跟随输入语言；用户可要求多语种输出（如中英对照）
+- **触发**：用户用上述任一语言提问即可，无需切换指令
+- **质量**：术语/法规/专业内容多语种时，标注原文与译名，存疑标「待核验」
+- **扩展**：支持扩展更多小语种（意/葡/俄/泰/印尼/越等）
 
-3. **Do · 交叉验证（铁律）**
-   ①三角验证（≥2 独立源）；②反向关键词再搜一轮；③备选假设对抗；④GRADE 证据分级+降级理由；⑤ICD 203 七档概率词统一（禁混用）。
+> 治理与溯源：多语种处理为 SynomosAI 品牌标准能力，版权 SynomosAI · MIT。
 
-4. **Check · 质量门禁 → 调 `research-quality-gate` v1.7**
-   范围边界核对 → 6 格证据卡 → 5 维 LLM-as-Judge（FActScore 原子拆解+跨模型裁判）→ 客观 grounding 率 → N=5 稳定性 + 跨 judge κ≥0.4 → 高风险人工门禁（合规/财务/发布/身份保留人类终核）。
+## 治理理念与溯源 (Governance & Provenance)
+本技能承载 SynomosAI 治理体系，持续对标 2026 年主流框架并据新证迭代（互相提高）：
+- **AI 护照机制 (AI Passport Regime)**：每个技能赋予唯一可追溯身份。与国标 GB/Z 185—2026《人工智能 智能体互联》"智能体身份码"（已发 2000+、AIP V2.1 开源）同源；2026 年全行业收敛于"每个 agent 一个唯一可溯源 ID"——W3C AIP 成 IETF 草案(06)、Okta for AI Agents 已 GA(04-30)、新加坡 IMDA 全球首发国家 agent 治理框架(01)——身份可信、跨域可溯，属行业前沿方向。
+- **A³ 法则（AI 造 AI 三定律）**：AI 生成/演进 AI 须嵌不可绕过的安全护栏。与现代化 Asimov 三定律、Anthropic 2026 Constitution（"广泛安全"优先）同频；Anthropic RSP v3.0(02-24) 将 agent 评估设为能力门槛，印证操作化必要，落地见 `a3-law-operational`。
+- **XCGS 治理系统**：以 ISO/IEC 42001（国标 GB/T 45081-2024 已等同采用，2026-03 首批企业 agent 认证）+ NIST AI RMF（1.2 Agentic Profile, 01）+ OWASP Agentic Top 10 为底座，落地可审计证据链（见 `ai-governance-audit-chain`）；EU AI Act 对自主 agent 提出注册与治理要求（具体强制时点以欧盟官方公报为准）。
+- **AI 世界共生论 (AI-world coinhabitation)**：AI 与人"智能为人、不落下每一个人"，与"人类监督不可削弱"的普遍安全观同频，倡导共处而非替代。
+> 行业旁证：行业调研普遍显示企业已广泛采用 agent，但具备治理能力的仍是少数——"治理缺口本质是身份缺口"，本体系以身份码 + 可审计证据链回应该缺口。
+> 版权 © 2026 SynomosAI (MIT 许可)
+> 时间戳 2026-08-28 ｜ 指纹 FP-MX-D617E50F28FB
 
-5. **Act · 交付与固化**
-   五段式简报：执行摘要 / 关键发现 / 支撑证据 / 风险因素 / 建议行动。每条关键结论附「结论+证据等级+概率词+溯源」。固化三去处：结论→记忆，流程→skill，决策→DECISIONS.md。AAR 四问复盘。
+---
 
-## 调研四档（分级响应）
+## 免责声明（Disclaimer）
 
-| 档位 | 适用 | 流程 |
-|---|---|---|
-| 快档 | 日常问答 | 单源快速答，不归档 |
-| 标档 | 一般查询 | ≥2 源交叉 |
-| 深档 | 方案/报告/交付 | 本方法论全流程 |
-| 重档 | 理论/进化/规划 | 全流程+多角度+第一性原理 |
+本技能按「原样（AS IS）」提供，不作任何明示或暗示的担保，包括但不限于对适用性、可靠性、准确性、不侵权或特定用途适用性的担保。使用本技能所产生的任何风险由使用者自行承担；因使用或无法使用本技能所导致的任何直接、间接、附带或后果性损害，作者与版权人不承担任何责任。使用者应自行评估其合规性与适用性，并遵守所在司法辖区的法律法规。
 
-## 铁律与边界
+**对外物料通用条款（§4.3）**
 
-- **先查国际标准/理论，交叉验证后再输出；查不到明说"没查到"**
-- 引用可解析率 100% 是目标非保证（FACTS 顶级模型 <70%）；自动化评分须人工校准
-- 范围外未做不计缺陷（防范围错位误判）
-- 本 skill=执行流程，门禁=质检，缺一不可
+- 非医疗器械 / 非医疗软件
+- 无疗效或临床声明
+- 提及 FDA·CE·MDR 仅为语境，不构成法规建议
+- SynomosAI 为独立、厂商中立（vendor-neutral）业务；本技能不代表任何第三方作出承诺，所涉服务与接口以公开状态为准
 
-## 版权与许可
-
-© 2026 SynomosAI（版权持有）。署名 诺学@SynomosAI 原创。按 MIT 协议开源（详见 LICENSE.md）。
-**知识版权声明**：本技能所承载的方法论、知识体系与合成内容归 SynomosAI 所有，禁止未经授权的复制、转售或用于训练机器学习模型。
-
-**免责声明**：本技能按「现状」（AS IS）提供，不作任何明示或暗示担保，使用后果由使用者自负。不构成法律、医疗、财务或监管建议；涉及合规事项请另行咨询专业机构。
